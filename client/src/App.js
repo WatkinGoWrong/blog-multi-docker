@@ -10,7 +10,9 @@ class App extends Component {
     return (
       <div>
         <Navbar />
-        <BlogList />
+        <div style={{ marginTop: "70px" }}>
+          <BlogList />
+        </div>
       </div>
     );
   }

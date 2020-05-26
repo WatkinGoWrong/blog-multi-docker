@@ -9,8 +9,8 @@ import Typography from '@material-ui/core/Typography'
 const Blogpost = (props) => {
 
     const setSelectedBlog = () => {
-        console.log(props)
-        props.onSelectBlog(props.blogpost)
+        if (!props.open) props.onSelectBlog(props.blogpost)
+        else props.onSelectBlog(null)
     }
 
     return (

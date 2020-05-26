@@ -54,12 +54,12 @@ class BlogList extends Component {
                         <Grid container spacing={10} style={{ padding: 24 }}>
                             {this.state.blogs.map(currentBlogpost => (
                                 <Grid item xs={12} sm={6} lg={4} xl={3}>
-                                    <Blogpost blogpost={currentBlogpost} onSelectBlog={this.setSelectedBlog} />
+                                    <Blogpost blogpost={currentBlogpost} onSelectBlog={this.setSelectedBlog} open={false} />
                                 </Grid>
                             ))}
                         </Grid>
                     </div>
-                ) : <Blogpost blogpost={this.state.selectedBlog} onSelectBlog={this.setSelectedBlog} />}
+                ) : <Blogpost blogpost={this.state.selectedBlog} onSelectBlog={this.setSelectedBlog} open={true} />}
             </div>
         )
     }
