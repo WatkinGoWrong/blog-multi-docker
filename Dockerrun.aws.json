@@ -1,0 +1,36 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "hostname": "client",
+            "image": "niktaw/blog-multi-client",
+            "essential": false,
+            "memory": 128
+        },
+        {
+            "name": "server",
+            "hostname": "api",
+            "image": "niktaw/blog-multi-server",
+            "essential": false,
+            "memory": 128
+        },
+        {
+            "name": "nginx",
+            "hostname": "nginx",
+            "image": "niktaw/blog-multi-nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": [
+                "client",
+                "server"
+            ],
+            "memory": 128
+        }
+    ]
+}
